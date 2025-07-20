@@ -7,8 +7,64 @@ import styles from '../styles/Home.module.css'
 export default class Home extends Component {
 	constructor(props){
     	super(props)
+
     	this.state = {
-    		mechanics: ['mechanic0','mechanic1', 'mechanic2', 'mechanic3', 'mechanic4', 'mechanic5', 'mechanic6', 'mechanic7', 'mechanic8', 'mechanic9', 'mechanic10']
+    		mechanics: [
+    			{
+    				name: "mechanic1",
+    				salary: 100,
+    				rating: 8.9,
+    				image: "mechanics1.png"
+    			}, 
+    			{
+    				name: "mechanic2",
+    				salary: 200,
+    				rating: 9.6,
+    				image: "mechanic2.png"
+    			},
+    			{
+    				name: "mechanic3",
+    				salary: 300,
+    				rating: 9.6,
+    				image: "mechanics1.png"
+    			},
+    			{
+    				name: "mechanic4",
+    				salary: 200,
+    				rating: 9.6,
+    				image: "mechanic2.png"
+    			},
+    			{
+    				name: "mechanic6",
+    				salary: 200,
+    				rating: 9.6,
+    				image: "mechanics1.png"
+    			},
+    			{
+    				name: "mechanic7",
+    				salary: 200,
+    				rating: 9.6,
+    				image: "mechanic2.png"
+    			},
+    			{
+    				name: "mechanic8",
+    				salary: 200,
+    				rating: 9.6,
+    				image: "mechanics1.png"
+    			},
+    			{
+    				name: "mechanic9",
+    				salary: 200,
+    				rating: 9.6,
+    				image: "mechanic2.png"
+    			},
+    			{
+    				name: "mechanic10",
+    				salary: 200,
+    				rating: 9.6,
+    				image: "mechanics1.png"
+    			}
+    		]
     	}
 	}
 
@@ -44,17 +100,17 @@ export default class Home extends Component {
 							{	this.state.mechanics.map(mechanic => {
 									return (
 										<div className={styles.mechanicCard}>
-											<img className={styles.cardImage} src="mechanic2.png" />
+											<img className={styles.cardImage} src={mechanic.image} />
 											<div className={styles.cardDetail}>
 												<div className={styles.cardTitle}>
-													{mechanic}
+													{mechanic.name}
 												</div>
 												<div className={styles.cardStats}>
 													<div className={styles.pricing}>
-														100k/h
+														{mechanic.salary} k/h
 													</div>
 													<div className={styles.rating}>
-														<img src="Rating.svg" /> 8.9
+														<img src="Rating.svg" /> {mechanic.rating}
 													</div>
 												</div>
 											</div>
