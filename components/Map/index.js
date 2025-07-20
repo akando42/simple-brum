@@ -90,7 +90,6 @@ export default class Map extends Component {
 	    // spinGlobe();
 	}
 
-
 	async loadMap(){
 		const { lng, lat, zoom } = this.state;
 		
@@ -103,12 +102,12 @@ export default class Map extends Component {
 
 	    const map = new mapboxgl.Map({
 	        container: this.mapContainer.current,
-	        style: 'mapbox://styles/hillodesign/clb95v8zd000v15nudmodao0i',
+	        style: 'mapbox://styles/hillodesign/cmdbcfn5500qs01sd8py9dryt',
 	        center: [lng, lat],
 	        zoom: parseInt(zoom)
 	    });
 
-	    // console.log(attractions);
+	    console.log("Attractions ", attractions);
  
 	    if (attractions.length > 1){
 	    	attractions.map(attraction => {
@@ -130,7 +129,7 @@ export default class Map extends Component {
 
 	        	const marker = new mapboxgl
 	        	    .Marker({
-	        	    	color: `black`,
+	        	    	color: `blue`,
 	        	    	occludedOpacity: 0.1
 	        	    })
 	        	    .setLngLat([long,lat])
@@ -138,7 +137,7 @@ export default class Map extends Component {
 	        	    .addTo(map)
 		    	})
 
-	    		this.setState({currentMarker: marker})
+	    		// this.setState({currentMarker: marker})
 
 	    } else {
 	    	const long = attractions.lng
@@ -152,7 +151,7 @@ export default class Map extends Component {
         	    .setLngLat([long, lat])
         	    .addTo(map)
 
-        	this.setState({currentMarker: marker})
+        	// this.setState({currentMarker: marker})
 	    }
 
 	    this.startSpinGlobe(map)
@@ -185,6 +184,11 @@ export default class Map extends Component {
         this.setState({
         	currentMarker: marker
         })
+	}
+
+	async loadMapData(){
+		let mechanics = props.data
+		console.log("mechanics", mechanics)
 	}
 
 	componentDidMount(){
