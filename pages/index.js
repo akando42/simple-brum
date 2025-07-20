@@ -4,6 +4,8 @@ import Image from 'next/image'
 import {Component} from "react"
 import styles from '../styles/Home.module.css'
 
+import Map from "../components/Map"
+
 export default class Home extends Component {
 	constructor(props){
     	super(props)
@@ -12,61 +14,61 @@ export default class Home extends Component {
     		mechanics: [
     			{
     				name: "mechanic1",
-    				salary: 100,
+    				salary: 10000,
     				rating: 8.9,
     				image: "mechanics1.png"
     			}, 
     			{
     				name: "mechanic2",
-    				salary: 200,
+    				salary: 20000,
     				rating: 9.6,
     				image: "mechanic2.png"
     			},
     			{
     				name: "mechanic3",
-    				salary: 300,
+    				salary: 30000,
     				rating: 9.6,
     				image: "mechanics1.png"
     			},
     			{
     				name: "mechanic4",
-    				salary: 200,
+    				salary: 200000,
     				rating: 9.6,
     				image: "mechanic2.png"
     			},
     			{
     				name: "mechanic5",
-    				salary: 200,
+    				salary: 200000,
     				rating: 9.6,
     				image: "mechanic2.png"
     			},
     			{
     				name: "mechanic6",
-    				salary: 200,
+    				salary: 200000,
     				rating: 9.6,
     				image: "mechanics1.png"
     			},
     			{
     				name: "mechanic7",
-    				salary: 200,
+    				salary: 20000,
     				rating: 9.6,
     				image: "mechanic2.png"
     			},
     			{
     				name: "mechanic8",
-    				salary: 200,
+    				salary: 200000,
     				rating: 9.6,
     				image: "mechanics1.png"
     			},
     			{
     				name: "mechanic9",
-    				salary: 200,
+    				salary: 100000,
     				rating: 9.6,
     				image: "mechanic2.png"
     			},
     			{
     				name: "mechanic10",
-    				salary: 200,
+    				salary: 40000,
     				rating: 9.6,
     				image: "mechanics1.png"
     			}
@@ -113,7 +115,7 @@ export default class Home extends Component {
 												</div>
 												<div className={styles.cardStats}>
 													<div className={styles.pricing}>
-														{mechanic.salary} k/h
+														{mechanic.salary/1000} k/h
 													</div>
 													<div className={styles.rating}>
 														{mechanic.rating}
@@ -128,9 +130,16 @@ export default class Home extends Component {
 						</div>
 					</div>
 					<div className={styles.mechanicMap}>
-						<div className={styles.theMap}>
-							Map
-						</div>
+						<Map 
+		                    width='33vw'
+		                    height="88vh"
+		                    styles={styles.mapBox}
+		                    data={this.state.markerData}
+		                    zoom="10" 
+		                    lng="105.1"
+		                    lat="21.2"
+		                    className={styles.theMap}
+		                />
 					</div>
 				</div>
 			</div>
