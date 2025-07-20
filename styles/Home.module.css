@@ -247,3 +247,12 @@
 .cancelShopListing:active {
 	transform: scale(0.90);
 }
+
+.findingShopContainer {
+	width: 100vw;
+	background-color: red;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}

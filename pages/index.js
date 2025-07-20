@@ -12,6 +12,7 @@ export default class Home extends Component {
 
     	this.state = {
     		addingShop: false,
+    		findingShop: false,
     		markerData: {lng: "105.1", lat: "21.02"},
     		mechanics: [
     			{
@@ -114,6 +115,8 @@ export default class Home extends Component {
     	this.listShop = this.listShop.bind(this)
     	this.addNewShop = this.addNewShop.bind(this)
     	this.cancelShopListing = this.cancelShopListing.bind(this)
+
+    	this.findShop = this.findShop.bind(this)
 	}
 
 	async listShop(){
@@ -169,6 +172,7 @@ export default class Home extends Component {
 
 		this.setState({
 			addingShop: false,
+			findingShop: false,
 			mechanics: mechanicList
 		})
 
@@ -179,6 +183,15 @@ export default class Home extends Component {
 		this.setState({
 			addingShop: false
 		})
+	}
+
+	async findShop(){
+		this.setState({
+			findingShop: true
+		})
+
+		console.log("Finding Shop ", this.state.findingShop)
+		// window.location.reload()
 	}
 
 	componentDidMount(){
@@ -201,7 +214,10 @@ export default class Home extends Component {
 						>
 							List Shop
 						</div>
-						<div className={styles.findShop}>
+						<div 
+							className={styles.findShop}
+							onClick={this.findShop}
+						>
 							Find Shop
 						</div>
 					</div>
@@ -257,51 +273,73 @@ export default class Home extends Component {
 							</div>
 						</div>
 					:   <div className={styles.mainSection}>
-							<div className={styles.mechanicTable}>
-								<div className={styles.mechanicCount}>
-									{this.state.mechanics.length} Mechanics
-								</div>
-								<div className={styles.mechanicCards}>
-									{	this.state.mechanics.map(mechanic => {
-											return (
-												<div className={styles.mechanicCard}>
-													<img className={styles.cardImage} src={mechanic.image} />
-													<div className={styles.cardDetail}>
-														<div className={styles.cardTitle}>
-															{mechanic.name}
-														</div>
-														<div className={styles.cardStats}>
-															<div className={styles.pricing}>
-																{mechanic.salary/1000} k/h
+							{
+								this.state.findingShop 
+								?   <div></div>
+								:   <div className={styles.mechanicTable}>
+										<div className={styles.mechanicCount}>
+											{this.state.mechanics.length} Mechanics
+										</div>
+										<div className={styles.mechanicCards}>
+											{	this.state.mechanics.map(mechanic => {
+													return (
+														<div className={styles.mechanicCard}>
+															<img className={styles.cardImage} src={mechanic.image} />
+															<div className={styles.cardDetail}>
+																<div className={styles.cardTitle}>
+																	{mechanic.name}
+																</div>
+																<div className={styles.cardStats}>
+																	<div className={styles.pricing}>
+																		{mechanic.salary/1000} k/h
+																	</div>
+																	<div className={styles.rating}>
+																		{mechanic.rating}
+																		<img src="Rating.svg" />
+																	</div>
+																</div>
 															</div>
-															<div className={styles.rating}>
-																{mechanic.rating}
-																<img src="Rating.svg" />
-															</div>
 														</div>
-													</div>
-												</div>
-											)
-										})
-									}
-								</div>
-							</div>
-							<div className={styles.mechanicMap}>
-								<Map 
-				                    width='33vw'
-				                    height="88vh"
-				                    styles={styles.mapBox}
-				                    data={this.state.mechanics}
-				                    zoom="10" 
-				                    lng="105.81916940872755"
-				                    lat="21.027974501469437"
-				                    zoom="13"
-				                    className={styles.theMap}
-				                />
-							</div>
+													)
+												})
+											}
+										</div>
+									</div>
+							}
+
+							{
+								this.state.findingShop
+								?   <div className={styles.findingShopContainer}>
+										<Map 
+						                    width='96vw'
+						                    height="88vh"
+						                    styles={styles.mapBox}
+						                    data={this.state.mechanics}
+						                    zoom="10" 
+						                    lng="105.81916940872755"
+						                    lat="21.027974501469437"
+						                    zoom="13"
+						                    className={styles.theMap}
+						                />
+									</div>
+								:   <div className={styles.mechanicMap}>
+										<Map 
+						                    width='33vw'
+						                    height="88vh"
+						                    styles={styles.mapBox}
+						                    data={this.state.mechanics}
+						                    zoom="10" 
+						                    lng="105.81916940872755"
+						                    lat="21.027974501469437"
+						                    zoom="13"
+						                    className={styles.theMap}
+						                />
+									</div>
+							}
+							
+							
 						</div>
 				}
-				
 			</div>
 		)
 	}
