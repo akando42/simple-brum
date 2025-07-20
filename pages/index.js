@@ -327,6 +327,7 @@ export default class Home extends Component {
 							{
 								this.state.findingShop
 								?   <div className={styles.findingShopContainer}>
+										<input className={styles.shopSearchBox} />
 										<Map 
 						                    width='96vw'
 						                    height="88vh"

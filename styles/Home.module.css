@@ -253,7 +253,20 @@
 	height: 92vh;
 	background-color: white;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	z-index: 1;
 	align-items: center;
 	justify-content: center;
+}
+
+.shopSearchBox {
+	z-index: 2;
+	bottom: 6vh;
+	border-radius: 20px;
+	position: absolute;
+	width: 90vw;
+	height: 6vh;
+	background-color: white;
+	font-size: 21px;
+	padding: 0 10px;
 }
