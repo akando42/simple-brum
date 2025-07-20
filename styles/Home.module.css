@@ -1,0 +1,180 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
+}
+
+.topNavBar {
+	width: 100vw;
+	height: 8vh;
+	border-bottom: 3px solid blue;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logoContainer {
+	width: 8vh;
+	height: 8vh;
+	margin: 0 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.brandName {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	width: 80vw;
+	height: 6vh;
+	color: blue;
+	font-size: 45px;
+	font-weight: 300;
+}
+
+.actionButtons {
+	display: flex;
+	flex-direction: row;
+}
+
+.listShop {
+	width: 10vw;
+	padding: 10px;
+	background-color: blue;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.findShop {
+	width: 10vw;
+	padding: 10px;
+	background-color: white;
+	color: blue;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid blue;
+}
+
+.listShop, .findShop {
+	margin: 0 10px;
+	font-weight: 700;
+	font-size: 21px;
+}
+
+.listShop:active, .findShop:active {
+	transform: scale(0.96);
+}
+
+.mainSection {
+	width: 100vw;
+	height: 92vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.mechanicTable {
+	width: 65vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.mechanicCount {
+	width: 65vw;
+	height: 8vh;
+	font-weight: 700;
+	font-size: 21px;
+	padding: 0 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.mechanicCards {
+	height: 84vh;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	overflow: scroll;
+}
+
+.mechanicCard {
+	max-width: 20vw;
+	height: 40vh;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 10px;
+	padding: 20px;
+}
+
+.mechanicCard:hover {
+	border: 1px solid blue;
+}
+
+/*.mechanicCard:active {
+	border: 1px solid blue;
+	background-color: blue;
+	color: white;
+	transform: scale(0.96);
+}
+*/
+.cardImage {
+	width: 200px;
+	height: 200px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+}
+
+.cardTitle {
+	font-size: 21px;
+	font-weight: 300;
+}
+
+.cardStats {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	font-weight: 700;
+	font-size: 21px;
+	margin: 20px 0;
+	width: 200px;
+}
+
+.rating {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 0 10px;
+	width: 5vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.rating:active {
+	transform: scale(0.9);
+}
+
+.mechanicMap {
+	width: 35vw;
+	background-color: blue;
+	height: 92vh;
+}
