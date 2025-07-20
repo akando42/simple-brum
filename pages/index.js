@@ -104,6 +104,16 @@ export default class Home extends Component {
     				lat: 21.02824590896404,
     			}
     		],
+    		queryArea: [
+    			{
+    				name: "mechanic1",
+    				salary: 10000,
+    				rating: 8.9,
+    				image: "mechanics1.png",
+    				lng: 105.807818099821,
+    				lat: 21.037807303285422
+    			}
+    		],
     		newMechanicName: 'Hoang Do',
     		newMechanicSalary: 100000,
     		newMechanicRating: 9.01,
@@ -114,6 +124,13 @@ export default class Home extends Component {
 
     	this.listShop = this.listShop.bind(this)
     	this.addNewShop = this.addNewShop.bind(this)
+    	this.addMechanicName = this.addMechanicName.bind(this)
+    	this.addMechanicSalary = this.addMechanicSalary.bind(this)
+    	this.addMechanicRating = this.addMechanicRating.bind(this)
+    	this.addMechanicImage = this.addMechanicImage.bind(this)
+    	this.addShopLatitude = this.addShopLatitude.bind(this)
+    	this.addShopLongitude = this.addShopLongitude.bind(this)
+
     	this.cancelShopListing = this.cancelShopListing.bind(this)
 
     	this.findShop = this.findShop.bind(this)
@@ -314,7 +331,7 @@ export default class Home extends Component {
 						                    width='96vw'
 						                    height="88vh"
 						                    styles={styles.mapBox}
-						                    data={this.state.mechanics}
+						                    data={this.state.mechanics[10]}
 						                    zoom="10" 
 						                    lng="105.81916940872755"
 						                    lat="21.027974501469437"

@@ -250,7 +250,8 @@
 
 .findingShopContainer {
 	width: 100vw;
-	background-color: red;
+	height: 92vh;
+	background-color: white;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
