@@ -35,6 +35,12 @@ export default class Home extends Component {
     				image: "mechanic2.png"
     			},
     			{
+    				name: "mechanic5",
+    				salary: 200,
+    				rating: 9.6,
+    				image: "mechanic2.png"
+    			},
+    			{
     				name: "mechanic6",
     				salary: 200,
     				rating: 9.6,
@@ -110,7 +116,8 @@ export default class Home extends Component {
 														{mechanic.salary} k/h
 													</div>
 													<div className={styles.rating}>
-														<img src="Rating.svg" /> {mechanic.rating}
+														{mechanic.rating}
+														<img src="Rating.svg" />
 													</div>
 												</div>
 											</div>
@@ -120,7 +127,11 @@ export default class Home extends Component {
 							}
 						</div>
 					</div>
-					<div className={styles.mechanicMap}></div>
+					<div className={styles.mechanicMap}>
+						<div className={styles.theMap}>
+							Map
+						</div>
+					</div>
 				</div>
 			</div>
 		)
