@@ -12,7 +12,7 @@ export default class Home extends Component {
 
     	this.state = {
     		addingShop: false,
-    		findingShop: true,
+    		findingShop: false,
     		markerData: {lng: "105.1", lat: "21.02"},
     		mechanics: [
     			{
