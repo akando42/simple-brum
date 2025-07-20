@@ -195,5 +195,55 @@
 	align-items: center;
 	justify-content: center;
 	background-color: blue;
+}
 
+.submitShopContainer {
+	width: 100vw;
+	background-color: blue;
+	height: 92vh;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 0;
+}
+
+.submitShop {
+	background-color: white;
+	color: blue;
+	padding: 10px;
+	width: 30vw;
+	display: flex;
+	height: 6vh;
+	flex-direction: row;
+	align-items: center;
+	margin: 10px 0;
+	justify-content: center;
+}
+
+.submitShop:active {
+	transform: scale(0.9);
+}
+
+.mechanicName, .mechanicSalary, .mechanicRating, .mechanicImage, .shopLng, .shopLat {
+	padding: 0 20px;
+	font-size: 21px;
+	width: 30vw;
+	height: 6vh;
+	margin: 10px 0;
+}
+
+.cancelShopListing {
+	border: 1px solid white;
+	width: 30vw;
+	height: 6vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.cancelShopListing:active {
+	transform: scale(0.90);
 }
