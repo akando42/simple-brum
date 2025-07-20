@@ -172,7 +172,7 @@ export default class Home extends Component {
 			mechanics: mechanicList
 		})
 
-		window.location.reload()
+		// window.location.reload()
 	}
 
 	async cancelShopListing(){
@@ -182,7 +182,6 @@ export default class Home extends Component {
 	}
 
 	componentDidMount(){
-		this.listShop()
 	}
 
 	render(){
