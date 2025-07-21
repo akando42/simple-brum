@@ -249,10 +249,10 @@ export default class Home extends Component {
 			<div className={styles.container}>
 				<div className={styles.topNavBar}>
 					<div className={styles.logoContainer}>
-						<img src="BRUM.svg" />
+						<a href="/"><img src="BRUM.svg" /></a>
 					</div>
 					<div className={styles.brandName}>
-						BRUM 
+						<a href="/">BRUM </a>
 					</div>
 					<div className={styles.actionButtons}>
 						<div
